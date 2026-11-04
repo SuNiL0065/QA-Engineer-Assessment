@@ -1,0 +1,9 @@
+TestSuite,TestCase,Steps,Expected,Automatable,Priority
+Regression,Visibility q_4 depends on q_3=Yes,Select Yes in q_3, q_4 visible,Yes,P0
+Regression,Visibility q_4 hidden when No,Select No in q_3, q_4 hidden,Yes,P0
+API,Duplicate localId handling,Send two payloads with same localId different deviceId,Both saved with different serverId,Yes,P0
+API,Idempotency,Replay same Idempotency-Key,Same serverId returned,Yes,P0
+Mobile,Offline save,Turn off wifi/data, fill survey, save,Check Room DB isSynced=0,No - Manual with ADB,P0
+Mobile,Background Sync with Charles,Turn on wifi, intercept with Charles 500,Check retry scheduled and data not lost,No,P0
+Device,Low storage ANR,Fill storage via adb dd, watch 4 videos,Should not ANR, capture meminfo,No,P1
+UX,Training Hub readability,Open on 5-inch 100% brightness,Check contrast >4.5:1 touch target >48dp,No,P1

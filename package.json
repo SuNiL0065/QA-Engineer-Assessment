@@ -1,0 +1,9 @@
+{
+  "name": "qa-assessment",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

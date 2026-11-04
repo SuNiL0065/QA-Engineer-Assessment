@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Sync Survey - Collision Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ankit Sync - School_1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Idempotency-Key",
+            "value": "ankit-{{$timestamp}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"localId\": \"School_1\",\n  \"deviceId\": \"device_ankit\",\n  \"schoolName\": \"Govt Primary School\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/sync-survey",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "sync-survey"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Pooja Sync - Same School_1 (Collision)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Idempotency-Key",
+            "value": "pooja-{{$timestamp}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"localId\": \"School_1\",\n  \"deviceId\": \"device_pooja\",\n  \"schoolName\": \"Govt Primary School\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/sync-survey"
+        }
+      }
+    }
+  ]
+}
